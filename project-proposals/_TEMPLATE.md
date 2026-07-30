@@ -22,7 +22,8 @@ INSTRUCTIONS:
 
 ## Why
 <!-- Why is this system worth deploying or automating? What gets better in terms of uptime, security, or efficiency? 2-3 sentences. -->
-
+-
+-
 
 ## Why Not
 <!-- What you are deliberately NOT building or configuring. Scope walls to keep the project realistic. 2-3 bullets. -->
