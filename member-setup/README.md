@@ -1,11 +1,20 @@
-## Git Auto-Installer & Configurator
+## Git Configurator
 
-A cross-platform Bash script that checks for Git, installs it if missing, and safely applies sensible global configurations without overwriting existing settings.
+A cross-platform Bash script that safely applies sensible global Git configurations without overwriting existing settings.
+
+## Prerequisites
+
+**Git must be installed on your machine before running this script.** The script will check for git and exit with instructions if it's not found.
+
+| Platform | Install Command |
+| --- | --- |
+| macOS | `brew install git` |
+| Linux | `sudo apt-get install git` (or your distro's equivalent) |
+| Windows | `winget install --id Git.Git -e --source winget` |
 
 ## Features
 
 - **Cross-Platform:** Supports Linux, macOS, and Windows.
-- **Smart Installation:** Automatically detects your OS and uses the native package manager (`apt`, `dnf`, `brew`, `winget`, etc.).
 - **Safe Configuration:** Applies global settings only if they aren't already set (won't overwrite existing credentials or configs).
 - **VS Code Integration:** Configures VS Code as the default editor, diff, and merge tool out of the box.
 
@@ -29,20 +38,8 @@ chmod +x setup.sh
 
 To run a Bash script on Windows, use **Git Bash** or **WSL**.
 
-#### Option A: Using Git Bash (Recommended if Git is partially installed)
-
 1. Right-click inside the folder containing `setup.sh` and select **Git Bash Here**.
 2. Run the script:
-```bash
-bash setup.sh
-```
-
-
-
-#### Option B: First-time setup without Git installed
-
-1. Open **PowerShell** or **Command Prompt** as Administrator.
-2. Run the script through standard Bash (or WSL):
 ```bash
 bash setup.sh
 ```

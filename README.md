@@ -28,6 +28,8 @@
 ```bash
 .
 ├── LICENSE
+├── member-setup/
+│   └── setup.sh
 ├── project-proposals/
 │   ├── HOW-TO-SUBMIT.md
 │   └── _TEMPLATE.md
