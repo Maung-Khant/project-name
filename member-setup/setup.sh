@@ -108,11 +108,11 @@ install_tools() {
     for tool in "${TOOLS[@]}"; do
         if dpkg -s "$tool" &> /dev/null; then
             echo "  [SKIP] $tool (already installed)"
-            ((skipped++))
+            skipped=$((skipped + 1))
         else
             echo "  [INST] $tool"
             sudo apt-get install -y -qq "$tool" > /dev/null
-            ((installed++))
+            installed=$((installed + 1))
         fi
     done
 
