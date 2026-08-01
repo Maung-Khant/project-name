@@ -2,17 +2,123 @@
 
 set -e
 
-# --- Prerequisite Check ---
-if ! command -v git &> /dev/null; then
-    echo "Error: git is not installed."
-    echo "Please install git before running this script."
-    echo "  - macOS:   brew install git"
-    echo "  - Linux:   sudo apt-get install git  (or your distro's equivalent)"
-    echo "  - Windows: winget install --id Git.Git -e --source winget"
-    exit 1
-fi
+# =============================================================================
+# Linux System Administration - Project Setup Script
+# Target: Ubuntu (22.04 LTS or later)
+# =============================================================================
 
-echo "Git detected: $(git --version)"
+# --- Prerequisite Checks ---
+check_ubuntu() {
+    if [ -f /etc/os-release ]; then
+        . /etc/os-release
+        if [ "$ID" != "ubuntu" ]; then
+            echo "Error: This script is designed for Ubuntu only."
+            echo "Detected: $PRETTY_NAME"
+            exit 1
+        fi
+    else
+        echo "Error: Cannot detect OS. /etc/os-release not found."
+        exit 1
+    fi
+}
+
+check_git() {
+    if ! command -v git &> /dev/null; then
+        echo "Error: git is not installed."
+        echo "Please install git first: sudo apt-get install git"
+        exit 1
+    fi
+    echo "Git detected: $(git --version)"
+}
+
+check_ubuntu
+check_git
+
+# --- System Tools to Install ---
+# Grouped by category for clarity
+TOOLS=(
+    # Core utilities
+    vim
+    nano
+    tmux
+    tree
+    curl
+    wget
+    unzip
+    p7zip-full
+    bash-completion
+
+    # Process & system monitoring
+    htop
+    sysstat
+    procps
+    psmisc
+
+    # Networking
+    net-tools
+    iputils-ping
+    traceroute
+    mtr-tiny
+    nmap
+    netcat-openbsd
+    dnsutils
+    tcpdump
+    openssh-client
+
+    # Disk & storage
+    lsof
+    ncdu
+    parted
+    smartmontools
+
+    # System info & tracing
+    strace
+    lsb-release
+    lshw
+    file
+
+    # User & security
+    openssh-server
+    fail2ban
+    ufw
+
+    # Services & logging
+    cron
+    logrotate
+    rsyslog
+
+    # Compression & archives
+    tar
+    gzip
+    bzip2
+    xz-utils
+)
+
+# --- Install Tools ---
+install_tools() {
+    echo ""
+    echo "--- Installing System Administration Tools ---"
+    echo ""
+
+    sudo apt-get update -qq
+
+    local installed=0
+    local skipped=0
+
+    for tool in "${TOOLS[@]}"; do
+        if dpkg -s "$tool" &> /dev/null; then
+            echo "  [SKIP] $tool (already installed)"
+            ((skipped++))
+        else
+            echo "  [INST] $tool"
+            sudo apt-get install -y -qq "$tool" > /dev/null
+            ((installed++))
+        fi
+    done
+
+    echo ""
+    echo "Tools: $installed installed, $skipped already present"
+}
 
 # --- Git Configuration Helpers ---
 set_config_if_missing() {
@@ -57,7 +163,7 @@ configure_user_credentials() {
     fi
 }
 
-apply_configurations() {
+apply_git_configurations() {
     echo ""
     echo "--- Checking & Applying Git Configurations ---"
 
@@ -85,6 +191,14 @@ apply_configurations() {
 }
 
 # --- Main Entry Point ---
-echo "=== Git Configuration Setup ==="
+echo "=== Linux System Administration Setup ==="
+echo "Target: Ubuntu $(lsb_release -rs 2>/dev/null || echo 'unknown')"
+echo ""
 
-apply_configurations
+install_tools
+apply_git_configurations
+
+echo ""
+echo "=== Setup Complete ==="
+echo "Installed ${#TOOLS[@]} system administration tools."
+echo "Run 'git config --list --global' to review your git settings."
