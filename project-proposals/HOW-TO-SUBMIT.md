@@ -55,7 +55,7 @@ Add your file, commit with a descriptive message, and push to your fork:
 ```bash
 git add project-proposals/<your-github-username>.md
 git commit -m "docs: add project proposal for <your-github-username>"
-git push origin proposal/<your-github-username>
+git push origin proposals/<your-github-username>
 ```
 
 ---
