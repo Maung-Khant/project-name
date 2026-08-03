@@ -1,8 +1,11 @@
 # DHCP & DNS Server — Linux SysAdmin Project Proposal
 
 **Submitted by:** @sample
+
 **Date of Submission:** 2026-08-02
+
 **Target Environment:** Ubuntu 24.04 LTS
+
 **Repository / Code Base:** https://github.com/ammdevl/project-name
 
 ## Gist

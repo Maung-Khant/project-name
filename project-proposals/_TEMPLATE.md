@@ -8,8 +8,11 @@ INSTRUCTIONS:
 # {{Project Name}} — Linux SysAdmin Project Proposal
 
 **Submitted by:** @{{your-github-username}}  
+
 **Date of Submission:** {{YYYY-MM-DD}}  
+
 **Target Environment:** {{e.g., Ubuntu 24.04 LTS / Debian 12 / RHEL 9 / Rocky Linux}}  
+
 **Repository / Code Base:** {{Link to GitHub/GitLab repo}}
 
 ## Gist
