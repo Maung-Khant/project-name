@@ -35,6 +35,27 @@ A Bash script that installs essential system administration tools and configures
 ### Compression
 `tar` `gzip` `bzip2` `xz-utils`
 
+### DHCP Server
+`isc-dhcp-server`
+
+### DNS Server
+`bind9` `bind9utils` `bind9-doc`
+
+### Web Server
+`nginx` `certbot` `python3-certbot-nginx` `openssl`
+
+### VPN Server
+`wireguard` `openvpn` `easy-rsa`
+
+### Proxy Server
+`squid` `squid-common`
+
+### Mail Server
+`postfix` `dovecot-core` `dovecot-imapd` `dovecot-pop3d` `mailutils`
+
+### SSL/TLS & Transport
+`ca-certificates` `apt-transport-https`
+
 ## Git Configuration
 
 The script also configures your global Git settings (user name, email, defaults, etc.). Existing values are preserved and skipped.
@@ -43,7 +64,7 @@ The script also configures your global Git settings (user name, email, defaults,
 
 ```bash
 # Clone and run
-git clone <repo-url>
+git clone https://github.com/<your-github-username>/project-name.git
 cd project-name/member-setup
 chmod +x setup.sh
 ./setup.sh
