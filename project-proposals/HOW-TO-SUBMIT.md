@@ -6,8 +6,8 @@ Follow these steps to submit your Linux System Administration project proposal.
 If you haven't already, fork this repository to your GitHub account and clone it to your local machine:
 
 ```bash
-git clone [https://github.com/](https://github.com/)<your-github-username>/<repo-name>.git
-cd <repo-name>
+git clone https://github.com/<your-github-username>/project-name.git
+cd project-name
 ```
 
 ---
