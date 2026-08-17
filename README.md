@@ -29,11 +29,13 @@
 .
 ├── LICENSE
 ├── member-setup/
+├── ├── README.md
 │   └── setup.sh
 ├── project-proposals/
 │   ├── HOW-TO-SUBMIT.md
 │   └── _TEMPLATE.md
-└── README.md
+├── README.md
+└── server-setup.sh
 ```
 ## Tech Stack & Tools
 > **Status:** 🟡 **Proposal Stage** — *Pending Review / Approval*  
