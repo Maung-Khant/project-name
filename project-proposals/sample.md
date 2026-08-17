@@ -6,8 +6,6 @@
 
 **Target Environment:** Ubuntu 24.04 LTS
 
-**Repository / Code Base:** https://github.com/ammdevl/project-name
-
 ## Gist
 
 A local network DHCP and DNS server using ISC DHCP and BIND9, providing automatic IP assignment and domain name resolution for a school lab environment.
