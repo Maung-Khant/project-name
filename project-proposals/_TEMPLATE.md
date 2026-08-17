@@ -13,8 +13,6 @@ INSTRUCTIONS:
 
 **Target Environment:** {{e.g., Ubuntu 24.04 LTS / Debian 12 / RHEL 9 / Rocky Linux}}  
 
-**Repository / Code Base:** {{Link to GitHub/GitLab repo}}
-
 ## Gist
 <!-- One sentence. What system, service, or automation are you building, in plain words? -->
 

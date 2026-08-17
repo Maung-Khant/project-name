@@ -28,14 +28,15 @@
 ```bash
 .
 ├── LICENSE
-├── member-setup/
-├── ├── README.md
-│   └── setup.sh
+├── MEMBER_SETUP.md
+├── README.md
 ├── project-proposals/
 │   ├── HOW-TO-SUBMIT.md
-│   └── _TEMPLATE.md
-├── README.md
-└── server-setup.sh
+│   ├── _TEMPLATE.md
+│   └── sample.md
+└── script/
+    ├── member-setup.sh
+    └── server-setup.sh
 ```
 ## Tech Stack & Tools
 > **Status:** 🟡 **Proposal Stage** — *Pending Review / Approval*  

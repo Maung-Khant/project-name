@@ -65,9 +65,9 @@ The script also configures your global Git settings (user name, email, defaults,
 ```bash
 # Clone and run
 git clone https://github.com/<your-github-username>/project-name.git
-cd project-name/member-setup
-chmod +x setup.sh
-./setup.sh
+cd project-name/script
+chmod +x member-setup.sh
+./member-setup.sh
 ```
 
 ## Verifying Your Setup
